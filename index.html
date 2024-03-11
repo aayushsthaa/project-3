@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      :root {
+        --primary-color-1: #e7e6e6af;
+        --primary-color-2: #01589f;
+        --secondary-color-1: #428bca;
+        --secondary-color-2: #265073;
+        --secondary-color-3: #663dff;
+        --secondary-color-4: #265073;
+      }
+      body {
+        font-family: "League Spartan", sans-serif;
+        background-color: var(--primary-color-1);
+        margin: 0px;
+      }
+      h2,
+      h3 {
+        color: var(--secondary-color-3);
+      }
+      a {
+        text-decoration: none;
+        color: var(--secondary-color-2);
+      }
+      /*Small screen*/
+      @media screen and (max-width: 600px) {
+        .first-container {
+          display: block;
+          justify-content: center;
+        }
+        .first-container-image img {
+          width: 100%;
+        }
+        .first-container-content {
+          text-align: center;
+          margin-bottom: 20px;
+          padding: 20px;
+        }
+        .first-container-content h1 {
+          margin: 0px;
+          margin-bottom: 20px;
+        }
+        .second-card-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .second-card {
+          max-width: 60%;
+        }
+        .third-container {
+          flex-direction: column;
+        }
+        .third-container-content {
+          text-align: center;
+        }
+        .third-container-image img {
+          width: 100%;
+        }
+      }
+      /*Big screen*/
+      @media (min-width: 600px) {
+        h2 {
+          font-size: 200%;
+        }
+        .first-container {
+          display: flex;
+          width: 100%;
+        }
+        .first-container > div {
+          flex: 1;
+        }
+        .first-container-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+        }
+        .first-container-content h1 {
+          margin: 0px;
+          font-size: 400%;
+        }
+        .first-container-image img {
+          width: 100%;
+        }
+        .second-container {
+          text-align: center;
+          padding: 30px;
+        }
+        .second-card-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+        .second-card {
+          max-width: 20%;
+          min-width: 20%;
+        }
+        .third-container {
+          margin-left: 50px;
+        }
+        .third-container-image {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .third-container-image img {
+          width: 100%;
+        }
+      }
+
+      /* Css Starts*/
+      .first-container {
+        align-items: center;
+        background-color: var(--primary-color-2);
+        margin: 0px;
+        color: whitesmoke;
+      }
+      .first-container a {
+        color: whitesmoke;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .second-container {
+        text-align: center;
+      }
+      .second-card-container {
+        flex-wrap: wrap;
+      }
+      .second-card-container > div {
+        margin-bottom: 30px;
+        flex: 1;
+      }
+      .second-card {
+        background-color: white;
+        height: 100%;
+        padding: 20px;
+        border-radius: 9px;
+      }
+      .second-card-container img {
+        width: 100%;
+        height: 200px;
+      }
+      .third-container {
+        display: flex;
+        margin: 20px 0px;
+        padding: 30px 0px;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        flex-wrap: wrap;
+      }
+      .third-container > div {
+        flex: 1;
+      }
+      .custom-btn {
+        width: 170px;
+        height: 50px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: "Lato", sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+          7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+          4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+        outline: none;
+      }
+      .btn {
+        background: #b621fe;
+        border: none;
+        z-index: 1;
+        font-size: 1.2rem;
+      }
+      .btn:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        background-color: #663dff;
+        border-radius: 5px;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+          7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+          4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .btn:hover {
+        color: #fff;
+      }
+      .btn:hover:after {
+        left: 0;
+        width: 100%;
+      }
+      .btn:active {
+        top: 2px;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/762a2bf5c0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="first-container">
+      <div class="first-container-content">
+        <h1>SIMPLICITY</h1>
+        <h1>STYLE</h1>
+        <br />
+        <p>
+          Crafted with Passion, <br />Worn with Confidence: Where Every Stitch
+          Tells a Story of Individuality and Expression
+        </p>
+        <a href="#">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="first-container-image">
+        <img src="./images/1.jpg" alt="Lady with fashion" />
+      </div>
+    </div>
+    <div class="second-container">
+      <h2>WHY SHOP WITH US?</h2>
+      <div class="second-card-container">
+        <div class="second-card">
+          <div class="card-image">
+            <img src="./images/5.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h3>Quality Guarantee</h3>
+            <p>
+              Our clothing is made from high-quality materials, ensuring
+              durability and comfort with every purchase.
+            </p>
+          </div>
+        </div>
+        <div class="second-card">
+          <div class="card-image">
+            <img src="./images/3.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h3>Personalized Recommendations</h3>
+            <p>
+              Shop from the comfort of your home, anytime, anywhere. Our online
+              platform is user-friendly, making your shopping experience
+              seamless and hassle-free.
+            </p>
+          </div>
+        </div>
+        <div class="second-card">
+          <div class="card-image">
+            <img src="./images/4.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h3>Wide Selection</h3>
+            <p>
+              We offer a diverse range of styles, sizes, and designs to cater to
+              every taste and preference.
+            </p>
+          </div>
+        </div>
+        <div class="second-card">
+          <div class="card-image">
+            <img src="./images/2.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h3>Convenience</h3>
+            <p>
+              Shop from the comfort of your home, anytime, anywhere. Our online
+              platform is user-friendly, making your shopping experience
+              seamless and hassle-free.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="third-container">
+      <div class="third-container-image">
+        <img src="./images/11.jpg" alt="" />
+      </div>
+      <div class="third-container-content">
+        <h2>TRENDING SEASON</h2>
+        <h2>START TRENDING NOW</h2>
+        <br />
+        <br />
+        <div class="third-container-javbar">
+          <a href="#"></a> | <a href="#">Dresses For Girls</a> |
+          <a href="#">T-Shirts </a>
+        </div>
+        <p>
+          Our mission is to inspire confidence and celebrate individuality
+          through timeless style and impeccable craftsmanship. From the soft
+          touch of luxurious fabrics to the meticulous attention to detail in
+          every stitch, each piece in our collection embodies a unique story
+          waiting to be told. Whether you're seeking sophisticated elegance or
+          laid-back chic, our diverse range of clothing is designed to empower
+          you to express your true self with flair and confidence.
+        </p>
+        <p>
+          Join us on a journey of self-expression, where every outfit becomes a
+          canvas for your personal style narrative.
+        </p>
+        <button class="btn custom-btn">Shop Now</button>
+      </div>
+    </div>
+    <div class="fourth-container"></div>
+  </body>
+</html>
